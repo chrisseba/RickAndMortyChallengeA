@@ -1,0 +1,2 @@
+rickAndMortyApi:
+  url: ${VAR:https://rickandmortyapi.com/api}

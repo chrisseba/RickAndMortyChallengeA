@@ -6,11 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class Character {
+public class CharacterModel {
 
     private Integer id;
     private String name;
     private String status;
+    private String species;
+    private String type;
     private List<String> episode = new ArrayList<>();
-    private Origin origin;
+    private OriginModel origin;
 }

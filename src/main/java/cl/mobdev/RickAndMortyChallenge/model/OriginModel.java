@@ -1,4 +1,4 @@
-package cl.mobdev.RickAndMortyChallenge.dto;
+package cl.mobdev.RickAndMortyChallenge.model;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class OriginDTO {
+public class OriginModel {
     private String name;
     private String url;
     private String dimension;
