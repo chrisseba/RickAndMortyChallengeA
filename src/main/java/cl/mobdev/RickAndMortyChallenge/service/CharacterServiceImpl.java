@@ -1,6 +1,7 @@
 package cl.mobdev.RickAndMortyChallenge.service;
 
 import cl.mobdev.RickAndMortyChallenge.dto.CharacterDTO;
+import cl.mobdev.RickAndMortyChallenge.exception.CharacterNotFoundException;
 import cl.mobdev.RickAndMortyChallenge.model.CharacterModel;
 import cl.mobdev.RickAndMortyChallenge.model.OriginModel;
 import cl.mobdev.RickAndMortyChallenge.utils.Utils;
@@ -35,7 +36,7 @@ public class CharacterServiceImpl implements CharacterService{
                             return Mono.empty();
                         }
                         return this.injectOriginToCharacter(Utils.characterModelToCharacterDTO(charModelValue));
-                    });
+                    }).onErrorMap(error -> new CharacterNotFoundException(id));
     }
 
     private Mono<CharacterDTO> injectOriginToCharacter(CharacterDTO characterDTO){
